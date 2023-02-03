@@ -2,8 +2,6 @@
 
 namespace app;
 
-use App\Services\WeatherService;
-
 class Controller
 {
     private WeatherService $service;

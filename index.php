@@ -1,7 +1,7 @@
 <?php
 
 use App\Router;
-use App\Services\WeatherService;
+use App\WeatherService;
 
 require_once './vendor/autoload.php';
 
