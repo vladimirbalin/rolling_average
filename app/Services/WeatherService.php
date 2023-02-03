@@ -11,7 +11,7 @@ class WeatherService
         $this->csv = file($filename);
     }
 
-    public function countAvgTempForEachDay(): array
+    public function getAvgTempForEachDay(): array
     {
         $arr = [];
         foreach ($this->csv as $line) {
@@ -38,10 +38,9 @@ class WeatherService
         return array_reverse($averages);
     }
 
-    public function countRollingAverage($period): array
+    public function getRollingAverageFor($period): array
     {
-        $rollingAverage = [];
-        $averageTemp = $this->countAvgTempForEachDay();
+        $averageTemp = $this->getAvgTempForEachDay();
         $windowSize = match ($period) {
             'day' => 1,
             'week' => 7,

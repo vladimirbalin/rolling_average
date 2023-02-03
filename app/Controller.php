@@ -17,21 +17,21 @@ class Controller
     public function day(): void
     {
         echo json_encode(
-            $this->service->countRollingAverage('day')
+            $this->service->getRollingAverageFor('day')
         );
     }
 
     public function week(): void
     {
         echo json_encode(
-            $this->service->countRollingAverage('week')
+            $this->service->getRollingAverageFor('week')
         );
     }
 
     public function month(): void
     {
         echo json_encode(
-            $this->service->countRollingAverage('month')
+            $this->service->getRollingAverageFor('month')
         );
     }
 }
