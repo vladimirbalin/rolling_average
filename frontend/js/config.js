@@ -1,3 +1,3 @@
 export default {
-    'endpoint': 'http://native-weather.local/'
+    'endpoint': 'https://example.com'
 }

@@ -31,7 +31,7 @@ class WeatherService
             $count = count($temps);
             $averages[] = [
                 'day' => $day,
-                'temp' => array_sum($temps) / $count
+                'avg_temp' => array_sum($temps) / $count
             ];
         }
 
@@ -46,18 +46,19 @@ class WeatherService
             'week' => 7,
             'month' => 30
         };
-        for ($i = 0; $i < count($averageTemp); $i++) {
 
-            $window[] = $averageTemp[$i]['temp'];
+        for ($i = 0; $i < count($averageTemp); $i++) {
+            $window[] = $averageTemp[$i]['avg_temp'];
 
             if (count($window) > $windowSize) {
                 $rollingAverage[$averageTemp[$i]['day']] = array_sum($window) / count($window);
+                $averageTemp[$i]['avg_rolling'] = array_sum($window) / count($window);
                 array_shift($window);
             } else {
-                $rollingAverage[$averageTemp[$i]['day']] = null;
+                $averageTemp[$i]['avg_rolling'] = null;
             }
         }
 
-        return $rollingAverage;
+        return $averageTemp;
     }
 }
