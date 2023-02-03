@@ -1,11 +1,8 @@
 <?php
 
 use App\Router;
-use App\WeatherService;
 
 require_once './vendor/autoload.php';
-
-$weather = new WeatherService("weather_statistics.csv");
 
 $router = new Router();
 
