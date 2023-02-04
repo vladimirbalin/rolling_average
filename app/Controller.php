@@ -4,11 +4,10 @@ namespace App;
 
 class Controller
 {
-    private WeatherService $service;
-
-    public function __construct()
+    public function __construct(
+        private readonly WeatherService $service
+    )
     {
-        $this->service = new WeatherService("weather_statistics.csv");
         header('Content-type: application/json');
     }
 
