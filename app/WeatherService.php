@@ -41,6 +41,7 @@ class WeatherService
     public function getRollingAverageFor($period): array
     {
         $averageTemp = $this->getAvgTempForEachDay();
+        $window = [];
         $windowSize = match ($period) {
             'day' => 1,
             'week' => 7,
