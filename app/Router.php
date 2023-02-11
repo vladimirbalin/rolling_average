@@ -11,7 +11,8 @@ class Router
      *      [
      *         'handler' => [SomeController::class, method] | \Namespace\SomeController::class | callable,
      *         'deps' => [dependencies]
-     *       ]
+     *       ],
+     *     '/another-url' => ...
      *    ]
      */
     protected array $routes = [];
